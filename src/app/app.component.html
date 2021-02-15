@@ -1,0 +1,26 @@
+<!-- <GridLayout>
+  <page-router-outlet></page-router-outlet>
+</GridLayout> -->
+
+<BottomNavigation>
+    <TabStrip>
+        <TabStripItem>
+            <Label text="Home"></Label>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="Ayuda"></Label>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="Menú"></Label>
+        </TabStripItem>
+    </TabStrip>
+    <TabContentItem>
+        <page-router-outlet name="items"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="ayuda"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="menu"></page-router-outlet>
+    </TabContentItem>
+</BottomNavigation>

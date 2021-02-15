@@ -1,0 +1,10 @@
+<ListView row="2" colSpan="2" [items]="items" (itemTap)="onItemTap($event)">
+    <ng-template nsTemplateKey="Active" let-item="item" let-i="index">
+        <GridLayout columns="1*,5*" rows="*, *,*" class="{{item.selected}}">
+            <Image col="0" row="0" rowSpan="2" src="res://m" width="30"></Image>
+            <Label col="1" row="0" fontWeight="bold" text="{{item.name}}" class="titulo"></Label>
+            <label col="1" row="1" fontWeight="bold" text="{{item.role}}" class="subTitulo"></label>
+            <label col="1" row="2" text="{{item.id}}" class="subTitulo2"></label>
+        </GridLayout>
+    </ng-template>
+</ListView>

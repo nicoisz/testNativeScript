@@ -1,0 +1,16 @@
+<StackLayout orientation="vertical" backgroundColor="white" marginTop="30">
+    <Image width="30" horizontalAlignment="right" src="res://ximg" (tap)="closeModal($event)"></Image>
+    <Label text="Titulo" width="90%" [ngClass]="{invalid: !titleCtrl.valid && titleCtrl.touched}"></Label>
+    <TextField hint="Escribe un titulo..." class="input" returnKeyType="next" required [(ngModel)]="title" #titleCtrl="ngModel"></TextField>
+    <!-- <label width="90%" color="red" *ngIf="!titleCtrl.valid && titleCtrl.touched" text="Porfavor ingrese un titulo"></label> -->
+
+    <Label text="Descripción" width="90%" [ngClass]="{invalid: !descriptionCtrl.valid && descriptionCtrl.touched}"></Label>
+    <TextView hint="Escribe una descripción..." class="input" returnKeyType="done" required [(ngModel)]="description" #descriptionCtrl="ngModel"></TextView>
+    <!-- <label width="90%" color="red" *ngIf="!descriptionCtrl.valid && descriptionCtrl.touched" text="Porfavor ingrese una descripción"></label> -->
+
+    <Label text="Fecha" width="90%" [ngClass]="{invalid: !dateCtrl.valid && dateCtrl.touched}"></Label>
+    <TextField hint="Escribe una fecha..." class="input" keyboardType="datetime" returnKeyType="done" required [(ngModel)]="date" #dateCtrl="ngModel"></TextField>
+    <!-- <label width="90%" color="red" *ngIf="!dateCtrl.valid && dateCtrl.touched" text="Porfavor ingrese una fecha"></label> -->
+
+    <Button text="GUARDAR" horizontalAlignment="center" [isEnabled]="titleCtrl.valid && descriptionCtrl.valid && dateCtrl.valid" class="compra-bolsa blue-movistar-bg" width="90%" marginTop="20" (tap)="onSubmit(titleCtrl.value, descriptionCtrl.value, dateCtrl.value)"></Button>
+</StackLayout>

@@ -1,0 +1,27 @@
+<ns-action-bar [ActionBarName]="currentTab"></ns-action-bar>
+
+<GridLayout columns="*" rows="3*, *,4*" height="100%">
+    <GridLayout row="0" col="0" columns="*, *" rows="1*, 3*" height="210" class="bg" paddingBottom="15">
+
+        <Label text="Información de tu plan" row="0" col="0" colspan="2" class="text-center first-label" marginTop="10"></Label>
+
+        <GridLayout row="1" col="0" class="box1 text-center" columns="*" rows="2*,1*,1*" height="200" marginLeft="20">
+            <Image col="0" row="0" src="res://img1" width="30"></Image>
+            <Label row="1" col="0" text="Reinicio de tu plan"></Label>
+            <Label row="2" col="0" fontWeight="bold" fontSize="15%" text="Dia XX del mes"></Label>
+        </GridLayout>
+
+        <GridLayout row="1" col="1" class="box1 text-center" columns="*" rows="2*,1*,1*" height="200" marginRight="20">
+            <Image col="0" row="0" src="res://img2" width="30"></Image>
+            <Label row="1" col="0" text="Boleta lista para pago"></Label>
+            <Label row="2" col="0" fontWeight="bold" fontSize="15%" text="Dias XX del mes"></Label>
+        </GridLayout>
+
+    </GridLayout>
+
+
+    <Button row="1" col="0" text="Compra una bolsa" class="compra-bolsa blue-movistar-bg" marginTop="10" marginBottom="10"></Button>
+
+    <ns-list-view row="2" col="0"></ns-list-view>
+
+</GridLayout>
