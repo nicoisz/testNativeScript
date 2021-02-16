@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, ViewContainerRef } from "@angular/core";
-
+import { Title } from "@angular/platform-browser";
+import { BehaviorSubject } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: "root"
@@ -9,24 +11,23 @@ export class uiService {
     
     private _rootVCRef: ViewContainerRef;
 
-  
+    private _currentData = new BehaviorSubject(null);
+
     constructor(private http: HttpClient){
 
     }
 
-    createNewData(title:string, description:string,date:string){
-        const newData = {title, description, date};
-        this.http.put('https://nativescript-15dfb-default-rtdb.firebaseio.com/registros.json',newData).subscribe( res => {
-            console.log(res);
-        });
-    }
+    get currentChallenge() {
+        return this._currentData.asObservable();
+      }
+    
 
-    updateData(title:string, description:string,date:string){
-        const newData = {title, description, date};
-        this.http.put('https://nativescript-15dfb-default-rtdb.firebaseio.com/registros.json',newData).subscribe( res => {
-            console.log(res);
-        });
+    UpdateData(item) {
+        return this.http.put('https://nativescript-15dfb-default-rtdb.firebaseio.com/registros/'+item.id+'.json', item);
     }
+      
+    
+    
 
     getRootVCRef(){
         return this._rootVCRef;

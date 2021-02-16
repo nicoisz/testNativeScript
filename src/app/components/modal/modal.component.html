@@ -11,6 +11,5 @@
     <Label text="Fecha" width="90%" [ngClass]="{invalid: !dateCtrl.valid && dateCtrl.touched}"></Label>
     <TextField hint="Escribe una fecha..." class="input" keyboardType="datetime" returnKeyType="done" required [(ngModel)]="date" #dateCtrl="ngModel"></TextField>
     <!-- <label width="90%" color="red" *ngIf="!dateCtrl.valid && dateCtrl.touched" text="Porfavor ingrese una fecha"></label> -->
-
-    <Button text="GUARDAR" horizontalAlignment="center" [isEnabled]="titleCtrl.valid && descriptionCtrl.valid && dateCtrl.valid" class="compra-bolsa blue-movistar-bg" width="90%" marginTop="20" (tap)="onSubmit(titleCtrl.value, descriptionCtrl.value, dateCtrl.value)"></Button>
+    <Button text="GUARDAR" horizontalAlignment="center" class="compra-bolsa blue-movistar-bg" width="90%" marginTop="20" (tap)="onSubmit()"></Button>
 </StackLayout>

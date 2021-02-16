@@ -26,17 +26,14 @@ export class ListViewComponent implements OnInit {
 
     constructor(private service: uiService,private renderer:Renderer2, private modalDialog: ModalDialogService,
          private vcRef: ViewContainerRef, private ItemService:ItemService){
-
     }
 
     ngOnInit(){
-         this.ItemService.fetchData().subscribe(arg => {
-              this.items = arg;
-             console.log(arg);
+         this.ItemService.fetchData().then(arg => {
+             this.items = arg;
+             console.log("response firebase",arg); 
          });
-
     }
-
 
     onItemTap(args: ItemEventData) {
 
